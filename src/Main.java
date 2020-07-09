@@ -3,27 +3,21 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
-		String name = "菅原";
-		String message = name + "さん、こんにちは";
-		System.out.print("メッセージ: ");
-		System.out.println(message);
+		int x = 5;
+		int y = 10;
+		String ans = "x+yは"+ (x+y);
+		System.out.println(ans);
 
-		int a = 3;
-		int b = 1;
-		// 2つの値を比較して大きい方の数値を代入するメソッド
-		int m = Math.max(a, b);
-		System.out.println(m);
-
-		// ランダムな数を生成するメソッド
-		int r = new Random().nextInt(90);
-		System.out.println("あなたは、"+ r +"歳ですか？");
-
-		System.out.println("あなたの名前を入力してください");
-		String selfName = new Scanner(System.in).nextLine();
+		System.out.println("ようこそ占いの館へ");
+		System.out.println("名前を入力してください");
+		String name = new Scanner(System.in).nextLine();
 		System.out.println("年齢を入力してください");
-		int selfAge = new Scanner(System.in).nextInt();
-		System.out.println("名前: "+ selfName);
-		System.out.println("年齢: "+ selfAge);
-		System.out.println("上記の内容でお間違い無いですか？");
+		String ageString = new Scanner(System.in).nextLine();
+		int age = Integer.parseInt(ageString);
+		int fortune = new Random().nextInt(4);
+		++fortune;
+		System.out.println("占いの結果が出ました");
+		System.out.println(age +"歳の"+ name +"さんの運気番号は"+ fortune +"です");
+		System.out.println("1: 大吉, 2: 中吉, 3: 吉, 4: 凶");
 	}
 }
