@@ -1,24 +1,29 @@
+import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
-		float f = 3;
-		double d = f;
-		System.out.println(f +"+"+ d);
+		String name = "菅原";
+		String message = name + "さん、こんにちは";
+		System.out.print("メッセージ: ");
+		System.out.println(message);
 
-		// int num = 3.2; エラーが出る
+		int a = 3;
+		int b = 1;
+		// 2つの値を比較して大きい方の数値を代入するメソッド
+		int m = Math.max(a, b);
+		System.out.println(m);
 
-		// キャスト演算子を行うことで強制的に型変換を行うことができる
-		// 情報に欠損が出るためあまり使うべきではない
-		int num = (int) 3.2;
-		System.out.println(num);
+		// ランダムな数を生成するメソッド
+		int r = new Random().nextInt(90);
+		System.out.println("あなたは、"+ r +"歳ですか？");
 
-		// 異なる型で演算を行なった場合は、意味的に大きな型に統一されてから演算が行われる
-		// 2(int)を2.0(double)に変換
-		double d2 = 8.5/2;
-		// 5(int)を5L(long)に変換
-		long l = 5 + 2L;
-		// 23(int)が"23"(String)に変換されて連結される
-		String msg = "私の年齢は"+ 23;
-		System.out.println(msg);
+		System.out.println("あなたの名前を入力してください");
+		String selfName = new Scanner(System.in).nextLine();
+		System.out.println("年齢を入力してください");
+		int selfAge = new Scanner(System.in).nextInt();
+		System.out.println("名前: "+ selfName);
+		System.out.println("年齢: "+ selfAge);
+		System.out.println("上記の内容でお間違い無いですか？");
 	}
 }
